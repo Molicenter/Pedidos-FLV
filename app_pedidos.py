@@ -950,11 +950,11 @@ if perfil_navegacao == "Separação e Fechamento":
             df_csv = df_csv.drop(columns=["Cód.Prime"], errors="ignore")
             df_csv = df_csv.rename(columns=MAPA_LOJAS)
             csv = df_csv.to_csv(index=False).encode("utf-8")
-            st.download_button("⬇️ CSV", data=csv, file_name="separacao_semanal.csv", mime="text/csv", use_container_width=True)
+            st.download_button("⬇️ CSV", data=csv, file_name="molicenter.csv", mime="text/csv", use_container_width=True)
             
         with col_excel:
             excel_bytes = _gerar_excel_formatado(df_editado_admin, filtro_setor)
-            nome_arquivo_excel = f"separacao_{filtro_setor.lower()}.xlsx" if filtro_setor != "Todos" else "separacao_semanal.xlsx"
+            nome_arquivo_excel = "molicenter.xlsx" 
             st.download_button(
                 "⬇️ Excel",
                 data=excel_bytes,
